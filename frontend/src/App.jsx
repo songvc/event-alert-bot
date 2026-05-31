@@ -1,6 +1,7 @@
 // frontend/src/App.jsx
 import React, { useState } from 'react';
-import { useQuery, useMutation, gql } from '@apollo/client';
+import { useQuery,useMutation } from '@apollo/client/react';
+import { gql } from '@apollo/client';
 import { Calendar, MapPin, Sparkles, RefreshCw, CheckCircle } from 'lucide-react';
 
 const FETCH_TECH_EVENTS = gql`
