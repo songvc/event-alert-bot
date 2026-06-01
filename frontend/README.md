@@ -1,3 +1,45 @@
+This repository hosts a full-stack dashboard designed to track top upcoming tech events in the San Jose and broader San Francisco Bay Area, query them using a unified GraphQL API, and automatically create dedicated schedules via the Google Calendar API.
+
+Built with React, Apollo Client, and GraphQL, it delivers a highly responsive, real-time booking and scheduling hub for developer conferences and tech expos.
+🚀 System Architecture Overview
+
+The system architecture utilizes a React frontend that queries an Apollo Server middleware. The GraphQL server aggregates local tech events data and interacts directly with the Google Calendar REST API through OAuth2 validation to programmatically construct user calendars.
+
++-----------------------------------+
+|            React UI               |
+|  (Event Dashboard & OAuth Auth)   |
++-----------------------------------+
+                 │
+  GraphQL Queries│  Apollo Client
+  & Mutations    ▼
++-----------------------------------+
+|           Apollo Server           |
+| (Resolvers & Schema Coordination)  |
++-----------------------------------+
+        │                     │
+        ▼ Local Data          ▼
++---------------+     +---------------------------+
+| San Jose Tech |     |    Google Calendar API    |
+| Events DB     |     | (Auto-generated Calendars)|
++---------------+     +---------------------------+
+
+🛠️ Tech Stack & Key Dependencies
+Frontend
+
+    React (v18+) – Component-driven UI.
+
+    Apollo Client – Manages state, queries, and mutations with local cache optimization.
+
+    TailwindCSS – Clean, modern UI styling.
+
+Backend / Middleware
+
+    Apollo Server – Handles the GraphQL schema definition and entry points.
+
+    Google APIs Client Library (googleapis) – Handles OAuth2 authentication workflows and CRUD actions on calendar segments.
+
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
